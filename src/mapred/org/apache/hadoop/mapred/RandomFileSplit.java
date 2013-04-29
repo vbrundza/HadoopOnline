@@ -21,7 +21,6 @@ import org.apache.hadoop.io.Text;
  * Author V. Brundza
  */
 
-
 public class RandomFileSplit implements InputSplit{
 	private Path[] files;
 	private long[] startoffset;
