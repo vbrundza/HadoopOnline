@@ -1,0 +1,50 @@
+2013-04-29 16:31:54,631 INFO org.apache.hadoop.metrics.jvm.JvmMetrics: Initializing JVM Metrics with processName=SHUFFLE, sessionId=
+2013-04-29 16:31:54,770 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: ShuffleRamManager: MemoryLimit=334063200 ( 3.34063194E14 mb), MaxSingleShuffleLimit=83515800
+2013-04-29 16:31:54,773 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: attempt_201304291453_0003_r_000000_0 Thread started: Thread for merging on-disk files
+2013-04-29 16:31:54,774 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: attempt_201304291453_0003_r_000000_0 Thread waiting: Thread for merging on-disk files. Input files on disk 0. Waiting for 10
+2013-04-29 16:31:54,775 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: attempt_201304291453_0003_r_000000_0 Thread started: Thread for merging in memory files
+2013-04-29 16:31:54,790 INFO org.apache.hadoop.mapred.ReduceTask: ReduceTask attempt_201304291453_0003_r_000000_0: In copy function.
+2013-04-29 16:31:54,824 INFO org.apache.hadoop.mapred.ReduceTask: ReduceTask attempt_201304291453_0003_r_000000_0 has requested all map buffers. 5 map buffers.
+2013-04-29 16:31:54,825 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Shuffeled 37 bytes (41 raw bytes) into RAM from task_201304291453_0003_m_000004
+2013-04-29 16:31:54,826 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000004: copy from attempt_201304291453_0003_m_000004_0 progress 1.0
+2013-04-29 16:31:54,826 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: 1 completed connections. 4 remaining.
+2013-04-29 16:31:54,826 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000004 total copy progress = 0.2
+2013-04-29 16:31:54,826 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000004 total sink progress = 0.2
+2013-04-29 16:31:54,832 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Shuffeled 40 bytes (44 raw bytes) into RAM from task_201304291453_0003_m_000001
+2013-04-29 16:31:54,832 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000001: copy from attempt_201304291453_0003_m_000001_0 progress 1.0
+2013-04-29 16:31:54,832 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: 2 completed connections. 3 remaining.
+2013-04-29 16:31:54,832 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000001 total copy progress = 0.4
+2013-04-29 16:31:54,833 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000001 total sink progress = 0.4
+2013-04-29 16:31:54,838 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Shuffeled 19 bytes (23 raw bytes) into RAM from task_201304291453_0003_m_000000
+2013-04-29 16:31:54,838 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000000: copy from attempt_201304291453_0003_m_000000_0 progress 1.0
+2013-04-29 16:31:54,838 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: 3 completed connections. 2 remaining.
+2013-04-29 16:31:54,839 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000000 total copy progress = 0.6
+2013-04-29 16:31:54,839 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000000 total sink progress = 0.6
+2013-04-29 16:31:54,844 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Shuffeled 40 bytes (44 raw bytes) into RAM from task_201304291453_0003_m_000002
+2013-04-29 16:31:54,844 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000002: copy from attempt_201304291453_0003_m_000002_0 progress 1.0
+2013-04-29 16:31:54,844 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: 4 completed connections. 1 remaining.
+2013-04-29 16:31:54,845 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000002 total copy progress = 0.8
+2013-04-29 16:31:54,845 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000002 total sink progress = 0.8
+2013-04-29 16:31:54,850 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Shuffeled 37 bytes (41 raw bytes) into RAM from task_201304291453_0003_m_000003
+2013-04-29 16:31:54,850 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000003: copy from attempt_201304291453_0003_m_000003_0 progress 1.0
+2013-04-29 16:31:54,850 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: 5 completed connections. 0 remaining.
+2013-04-29 16:31:54,850 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Closed ram manager
+2013-04-29 16:31:54,851 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: Task task_201304291453_0003_m_000003 total sink progress = 1.0
+2013-04-29 16:31:54,851 INFO org.apache.hadoop.mapred.ReduceTask: ReduceTask attempt_201304291453_0003_r_000000_0 copy phase completed in 61 ms.
+2013-04-29 16:31:54,851 INFO org.apache.hadoop.mapred.buffer.net.BufferExchangeSink: JBufferSink is closing.
+2013-04-29 16:31:54,992 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Initiating in-memory merge with 5 segments... total size = 173
+2013-04-29 16:31:54,999 INFO org.apache.hadoop.mapred.Merger: Merging 5 sorted segments
+2013-04-29 16:31:55,000 INFO org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 5 segments left of total size: 173 bytes
+2013-04-29 16:31:55,007 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: attempt_201304291453_0003_r_000000_0 Merge of the 5 files in-memory complete. Local file is /tmp/hadooplastb4lunch/mapred/local/taskTracker/jobcache/job_201304291453_0003/attempt_201304291453_0003_r_000000_0/output/map_task_201304291453_0003_m_000004_0.in of size 96
+2013-04-29 16:31:55,008 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Total input files on disk 1
+2013-04-29 16:31:55,008 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: FLUSH: Merged 0 segments, 173 bytes to disk to satisfy reduce memory limit
+2013-04-29 16:31:55,011 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Merging 1 files, 96 bytes from disk
+2013-04-29 16:31:55,013 INFO org.apache.hadoop.mapred.buffer.impl.JInputBuffer: Merging 1 segments, 96 bytes from memory
+2013-04-29 16:31:55,013 INFO org.apache.hadoop.mapred.Merger: Merging 1 sorted segments
+2013-04-29 16:31:55,022 INFO org.apache.hadoop.mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 92 bytes
+2013-04-29 16:31:55,024 INFO org.apache.hadoop.mapred.ReduceTask: Reducer called on 5 records.
+2013-04-29 16:31:55,128 INFO org.apache.hadoop.mapred.TaskRunner: Task:attempt_201304291453_0003_r_000000_0 is done. And is in the process of commiting
+2013-04-29 16:31:56,145 INFO org.apache.hadoop.mapred.TaskRunner: Task attempt_201304291453_0003_r_000000_0 is allowed to commit now
+2013-04-29 16:31:56,199 INFO org.apache.hadoop.mapred.FileOutputCommitter: Saved output of task 'attempt_201304291453_0003_r_000000_0' to hdfs://localhost:9000/lunch/output4
+2013-04-29 16:31:56,204 INFO org.apache.hadoop.mapred.TaskRunner: Task 'attempt_201304291453_0003_r_000000_0' done.
+2013-04-29 16:31:56,205 INFO org.apache.hadoop.mapred.ReduceTask: Reduce task total time = 1354 ms.

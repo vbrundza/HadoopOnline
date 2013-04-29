@@ -1,0 +1,7 @@
+2013-04-29 17:05:10,673 INFO org.apache.hadoop.metrics.jvm.JvmMetrics: Initializing JVM Metrics with processName=MAP, sessionId=
+2013-04-29 17:05:10,790 INFO org.apache.hadoop.mapred.MapTask: numReduceTasks: 1
+2013-04-29 17:05:11,020 INFO org.apache.hadoop.mapred.MapTask: Map task complete. Perform final close.
+2013-04-29 17:05:11,135 INFO org.apache.hadoop.mapred.buffer.impl.JOutputBuffer: Finished spill 0
+2013-04-29 17:05:11,138 INFO org.apache.hadoop.mapred.buffer.impl.JOutputBuffer: PartitionBufferMerger: final merge size 78. Spill files: [spill0.out[78 bytes]]
+2013-04-29 17:05:11,198 INFO org.apache.hadoop.mapred.TaskRunner: Task:attempt_201304291453_0005_m_000000_0 is done. And is in the process of commiting
+2013-04-29 17:05:11,213 INFO org.apache.hadoop.mapred.TaskRunner: Task 'attempt_201304291453_0005_m_000000_0' done.

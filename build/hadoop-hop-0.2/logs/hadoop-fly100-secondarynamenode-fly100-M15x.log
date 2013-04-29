@@ -1,0 +1,74 @@
+2013-04-29 14:53:20,227 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: STARTUP_MSG: 
+/************************************************************
+STARTUP_MSG: Starting SecondaryNameNode
+STARTUP_MSG:   host = fly100-M15x/127.0.1.1
+STARTUP_MSG:   args = []
+STARTUP_MSG:   version = Unknown
+STARTUP_MSG:   build = Unknown -r Unknown; compiled by 'Unknown' on Unknown
+************************************************************/
+2013-04-29 14:53:20,432 INFO org.apache.hadoop.metrics.jvm.JvmMetrics: Initializing JVM Metrics with processName=SecondaryNameNode, sessionId=null
+2013-04-29 14:53:26,791 INFO org.mortbay.http.HttpServer: Version Jetty/5.1.4
+2013-04-29 14:53:26,806 INFO org.mortbay.util.Credential: Checking Resource aliases
+2013-04-29 14:53:27,462 INFO org.mortbay.util.Container: Started org.mortbay.jetty.servlet.WebApplicationHandler@13a78071
+2013-04-29 14:53:27,543 INFO org.mortbay.util.Container: Started WebApplicationContext[/static,/static]
+2013-04-29 14:53:27,791 INFO org.mortbay.util.Container: Started org.mortbay.jetty.servlet.WebApplicationHandler@1664023c
+2013-04-29 14:53:27,793 INFO org.mortbay.util.Container: Started WebApplicationContext[/logs,/logs]
+2013-04-29 14:53:28,048 INFO org.mortbay.jetty.servlet.XMLConfiguration: No WEB-INF/web.xml in file:/home/fly100/HOP_SVn/hop-read-only/build/hadoop-hop-0.2/webapps/secondary. Serving files and default/dynamic servlets only
+2013-04-29 14:53:28,052 INFO org.mortbay.util.Container: Started org.mortbay.jetty.servlet.WebApplicationHandler@7bcd280b
+2013-04-29 14:53:28,054 INFO org.mortbay.util.Container: Started WebApplicationContext[/,/]
+2013-04-29 14:53:28,060 INFO org.mortbay.http.SocketListener: Started SocketListener on 0.0.0.0:50090
+2013-04-29 14:53:28,060 INFO org.mortbay.util.Container: Started org.mortbay.jetty.Server@224c47db
+2013-04-29 14:53:28,060 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Secondary Web-server up at: 0.0.0.0:50090
+2013-04-29 14:53:28,060 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint Period   :3600 secs (60 min)
+2013-04-29 14:53:28,060 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Log Size Trigger    :67108864 bytes (65536 KB)
+2013-04-29 14:58:28,404 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 96 bytes.
+2013-04-29 14:58:28,408 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 8462 bytes.
+2013-04-29 14:58:28,455 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=fly100,fly100,adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare
+2013-04-29 14:58:28,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2013-04-29 14:58:28,456 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2013-04-29 14:58:28,477 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 1
+2013-04-29 14:58:28,488 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2013-04-29 14:58:28,550 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadooplastb4lunch/dfs/namesecondary/current/edits of size 8462 edits # 88 loaded in 0 seconds.
+2013-04-29 14:58:28,619 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 2493 saved in 0 seconds.
+2013-04-29 14:58:28,724 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 14:58:29,092 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=127.0.1.1&token=-18:1993648850:0:1367240308000:1367239994825
+2013-04-29 14:58:29,546 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 2493
+2013-04-29 15:58:29,579 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 15:58:29,767 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 2493 bytes.
+2013-04-29 15:58:29,769 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 4 bytes.
+2013-04-29 15:58:29,777 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=fly100,fly100,adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare
+2013-04-29 15:58:29,778 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2013-04-29 15:58:29,778 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2013-04-29 15:58:29,779 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 24
+2013-04-29 15:58:29,787 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2013-04-29 15:58:29,787 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadooplastb4lunch/dfs/namesecondary/current/edits of size 4 edits # 0 loaded in 0 seconds.
+2013-04-29 15:58:29,839 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 2493 saved in 0 seconds.
+2013-04-29 15:58:29,922 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 15:58:30,262 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=127.0.1.1&token=-18:1993648850:0:1367243909000:1367240309244
+2013-04-29 15:58:30,578 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 2493
+2013-04-29 16:58:30,611 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 16:58:30,750 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 2493 bytes.
+2013-04-29 16:58:30,753 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 3624 bytes.
+2013-04-29 16:58:30,812 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=fly100,fly100,adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare
+2013-04-29 16:58:30,812 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2013-04-29 16:58:30,812 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2013-04-29 16:58:30,814 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 24
+2013-04-29 16:58:30,822 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2013-04-29 16:58:30,841 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadooplastb4lunch/dfs/namesecondary/current/edits of size 3624 edits # 38 loaded in 0 seconds.
+2013-04-29 16:58:30,906 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 3190 saved in 0 seconds.
+2013-04-29 16:58:31,012 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 16:58:31,401 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=127.0.1.1&token=-18:1993648850:0:1367247510000:1367243910282
+2013-04-29 16:58:31,750 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 3190
+2013-04-29 17:58:31,779 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 17:58:31,967 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file fsimage size 3190 bytes.
+2013-04-29 17:58:31,970 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Downloaded file edits size 20279 bytes.
+2013-04-29 17:58:31,991 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: fsOwner=fly100,fly100,adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare
+2013-04-29 17:58:31,992 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: supergroup=supergroup
+2013-04-29 17:58:31,992 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: isPermissionEnabled=true
+2013-04-29 17:58:31,993 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files = 30
+2013-04-29 17:58:32,002 INFO org.apache.hadoop.hdfs.server.common.Storage: Number of files under construction = 0
+2013-04-29 17:58:32,089 INFO org.apache.hadoop.hdfs.server.common.Storage: Edits file /tmp/hadooplastb4lunch/dfs/namesecondary/current/edits of size 20279 edits # 198 loaded in 0 seconds.
+2013-04-29 17:58:32,170 INFO org.apache.hadoop.hdfs.server.common.Storage: Image file of size 7374 saved in 0 seconds.
+2013-04-29 17:58:32,256 INFO org.apache.hadoop.hdfs.server.namenode.FSNamesystem: Number of transactions: 0 Total time for transactions(ms): 0 Number of syncs: 0 SyncTimes(ms): 0 
+2013-04-29 17:58:32,621 INFO org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Posted URL 0.0.0.0:50070putimage=1&port=50090&machine=127.0.1.1&token=-18:1993648850:0:1367251111000:1367247511420
+2013-04-29 17:58:32,965 WARN org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode: Checkpoint done. New Image Size: 7374
