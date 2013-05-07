@@ -58,18 +58,18 @@ public abstract class RandomFileInputFormat<K, V> extends
 				path[tmpIndex] = file.getPath();
 				//determines if file can be split even or some of sub-samples will have to be larger
 				largerSample = (i == 0) ? (file.getLength()%numberOfSplits != 0) : 
-					((file.getStart()+file.getLength()-(offsets[i-1]+lengths[i-1]))%numberOfSplits != 0);
+				  ((file.getStart()+file.getLength()-(offsets[i-1]+lengths[i-1]))%numberOfSplits != 0);
 				
 				//sets the offset and length of each sub-split
 				if (largerSample) {
 					offsets[tmpIndex] = file.getStart() + i + i* (file.getLength()/numberOfSplits);
-					lengths[tmpIndex++] = (i+1 == numberOfSplits) 
-							? (file.getLength() - (offsets[tmpIndex-1] - file.getStart()))
+					lengths[tmpIndex++] = (i+1 == numberOfSplits) ?
+							  (file.getLength() - (offsets[tmpIndex-1] - file.getStart()))
 							: (1 + file.getLength()/numberOfSplits);	
 				}else{
 					offsets[tmpIndex] = file.getStart() + i* (file.getLength()/numberOfSplits);
-					lengths[tmpIndex++] = (i+1 == numberOfSplits) 
-							? (file.getLength() - (offsets[tmpIndex-1] - file.getStart())) 
+					lengths[tmpIndex++] = (i+1 == numberOfSplits) ?
+							  (file.getLength() - (offsets[tmpIndex-1] - file.getStart())) 
 							: (file.getLength()/numberOfSplits);
 				}
 			}
