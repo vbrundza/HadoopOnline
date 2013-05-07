@@ -20,10 +20,12 @@ Enable input file shuffling for data bias reduction:
 [<code>io.file.shuffle = (boolean) true / false</code>]
 
 Set up the block level sampling rate (the number of files each sample
-should consist of). 
-Default value = 4. 
-Maximum value = total number of input files. 
-Minimum value = 1 (no sampling).
+should consist of).
+<ul>
+<li>Default value = 4 </li> 
+<li>Maximum value = total number of input files </li> 
+<li>Minimum value = 1 (no sampling) </li>
+</ul>
 
 [<code>io.split.maxsubsplit = (int) 1 to noOfInputFiles</code>]
 
