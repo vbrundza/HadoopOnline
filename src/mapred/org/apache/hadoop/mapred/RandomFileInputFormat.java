@@ -24,7 +24,7 @@ import org.apache.hadoop.util.Pair;
 
 public abstract class RandomFileInputFormat<K, V> extends 
 	FileInputFormat<K, V> {
-	private FileStatus[] inputFiles;
+	private FileSplit[] inputPaths;
 	private int maxsubsplit;
 	
 	/**
@@ -34,19 +34,18 @@ public abstract class RandomFileInputFormat<K, V> extends
 	@Override
 	public synchronized InputSplit[] getSplits(JobConf job, int numSplits)
 	throws IOException{
-		maxsubsplit = job.getInt("io.split.maxsubsplit", 4);
-		randomizeInput(job);
-		List<RandomFileSplit> splits = new ArrayList<RandomFileSplit>
-											(Math.min(numSplits, inputFiles.length));
+		getInputPaths(job, numSplits);
 		int processIndex = 0;
-		while (processIndex < inputFiles.length){
-			//get the number of splits to be sampled further
-			List<FileStatus> splitsToProcess = Arrays.asList(inputFiles).subList(processIndex, 
-					processIndex+maxsubsplit<inputFiles.length ? (processIndex+maxsubsplit) : inputFiles.length);
-			
-			//variables for creating RandomFileSplit
+		maxsubsplit = job.getInt("io.split.maxsubsplit", 4);
+		List<RandomFileSplit> splits = new ArrayList<RandomFileSplit>
+											(Math.min(numSplits, inputPaths.length));
 
+		while (processIndex < inputPaths.length){
 			
+			//get the number of splits to be sampled
+			List<FileSplit> splitsToProcess = Arrays.asList(inputPaths).subList(processIndex, 
+					processIndex+ maxsubsplit<inputPaths.length ? (processIndex+maxsubsplit) : inputPaths.length);
+		
 			for (int i = 0; i < splitsToProcess.size(); i++){
 				Path[] path = new Path[splitsToProcess.size()];
 				long[] offsets = new long[splitsToProcess.size()];
@@ -54,20 +53,24 @@ public abstract class RandomFileInputFormat<K, V> extends
 				int tmpIndex = 0;
 				boolean largerSample;
 				int numberOfSplits = splitsToProcess.size();
-				for (FileStatus file : splitsToProcess){
+				
+				for (FileSplit file : splitsToProcess){
 					path[tmpIndex] = file.getPath();
 					//determines if file can be split even or some of sub-samples will have to be larger
-					largerSample = (i == 0) ? (file.getLen()%numberOfSplits != 0) : 
-						((file.getLen()-(offsets[i-1]+lengths[i-1]))%numberOfSplits != 0);
+					largerSample = (i == 0) ? (file.getLength()%numberOfSplits != 0) : 
+						((file.getStart()+file.getLength()-(offsets[i-1]+lengths[i-1]))%numberOfSplits != 0);
+					
 					//sets the offset and length of each sub-split
 					if (largerSample) {
-						offsets[tmpIndex] = i + i* (file.getLen()/numberOfSplits);
-						lengths[tmpIndex++] = (i+1 == numberOfSplits) ? (file.getLen() - offsets[tmpIndex-1])
-								: (1 + file.getLen()/numberOfSplits);	
+						offsets[tmpIndex] = file.getStart() + i + i* (file.getLength()/numberOfSplits);
+						lengths[tmpIndex++] = (i+1 == numberOfSplits) 
+								? (file.getLength() - (offsets[tmpIndex-1] - file.getStart()))
+								: (1 + file.getLength()/numberOfSplits);	
 					}else{
-						offsets[tmpIndex] = i* (file.getLen()/numberOfSplits);
-						lengths[tmpIndex++] = (i+1 == numberOfSplits) ? (file.getLen() - offsets[tmpIndex-1]) 
-								: (file.getLen()/numberOfSplits);
+						offsets[tmpIndex] = file.getStart() + i* (file.getLength()/numberOfSplits);
+						lengths[tmpIndex++] = (i+1 == numberOfSplits) 
+								? (file.getLength() - (offsets[tmpIndex-1] - file.getStart())) 
+								: (file.getLength()/numberOfSplits);
 					}
 					
 				}
@@ -85,30 +88,33 @@ public abstract class RandomFileInputFormat<K, V> extends
 	
 	
 	// Reads and shuffles the input files sequence in an array
-	private void randomizeInput(JobConf job) throws IOException{
-		ArrayList<Pair> temporaryStorage = new ArrayList<Pair>();
-		inputFiles =  super.listStatus(job);
-		Random rand = new Random(System.currentTimeMillis());
+	private void getInputPaths(JobConf job, int numSplits) throws IOException{
 		
-		//Put into Pair data structure with assigned random integer used for shuffling
-		for (FileStatus file : inputFiles){
-			 temporaryStorage.add(new Pair<FileStatus>
+		this.inputPaths = (FileSplit[]) super.getSplits(job, numSplits);
+		boolean inputSort = job.getBoolean("io.split.insort", false);
+		
+		if (inputSort){
+		ArrayList<Pair> temporaryStorage = new ArrayList<Pair>();
+		Random rand = new Random(System.currentTimeMillis());
+		FileSplit[] shuffledInput = new FileSplit[inputPaths.length];
+		int index = 0;
+		
+		for (InputSplit file : inputPaths){
+			 temporaryStorage.add(new Pair<InputSplit>
 			 (rand.nextInt(Integer.MAX_VALUE), file)); 
 		}
-		  
+		
 		//Perform sorting
 		Collections.sort(temporaryStorage, new Comparator<Pair>(){
 			public int compare(Pair pair1, Pair pair2){
 				return (int)pair1.getFirst() - (int)pair2.getFirst();
 			}
 		});
-		  
-		// Store list of files into an array
-		FileStatus[] shuffledInput = new FileStatus[inputFiles.length];
-		int index = 0;
+		
 		for (Pair storedFile: temporaryStorage){
-			 shuffledInput[index++] = (FileStatus) storedFile.getSecond();
+			shuffledInput[index++] = (FileSplit) storedFile.getSecond();
 		}
-		this.inputFiles = shuffledInput;
+		this.inputPaths = shuffledInput;
 	  }
+	}
 }
