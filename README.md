@@ -32,6 +32,8 @@ One of examples (topkwordcount) does have it set by default, so can
 be executed without recompiling.
 
 Shuffle input file splits before sampling
+
 [io.split.insort = (boolean) true / false]
+
 NOTICE: 
 Works only if RandTextInputFormat is set for a job.
