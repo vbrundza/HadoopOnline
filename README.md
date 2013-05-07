@@ -8,7 +8,7 @@ To enable HOP-specific functionality (e.g. pipelining) below described settings 
 
 Enable pipelining between mappers and reducers:
 
-[mapred.map.pipeline = (boolean) true / false]
+[<code>mapred.map.pipeline = (boolean) true / false </code>]
 
 Determine the frequency of reducers output. Can be set between 1 and
 100 % (values of 0.01 and 1 accordingly):
