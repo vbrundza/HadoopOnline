@@ -13,11 +13,11 @@ Enable pipelining between mappers and reducers:
 Determine the frequency of reducers output. Can be set between 1 and
 100 % (values of 0.01 and 1 accordingly):
 
-[mapred.snapshot.frequency = (float) 0.0 to 1.0]
+   [mapred.snapshot.frequency = (float) 0.0 to 1.0]
 
 Enable input file shuffling for data bias reduction:
 
-[io.file.shuffle = (boolean) true / false]
+   [io.file.shuffle = (boolean) true / false]
 
 Set up the block level sampling rate (the number of files each sample
 should consist of). 
