@@ -28,7 +28,7 @@ Set up the block level sampling rate (the number of files covered in each sample
 
 [<code>io.split.maxsubsplit = (int) value</code>]
 
-<b>NOTICE:</b>
+<b>Notice:</b>
 To enable block level sampling jobs must be configured to use specific
 input format: RandTextInputFormat.class It can be set as following:
 [<code>JobConf.setInputFormat(RandTextInputFormat.class)</code>]
@@ -39,5 +39,5 @@ Shuffle input file splits before sampling:
 
 [<code>io.split.insort = (boolean) true / false</code>]
 
-NOTICE: 
+<b>Notice:</b> 
 Works only if RandTextInputFormat is set for a job.
