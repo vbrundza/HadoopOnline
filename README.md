@@ -1,9 +1,10 @@
 The Hadoop Online (HOP) is a modified version of Hadoop
 that supports pipelining between tasks and between jobs. For more
-information on HOP, please see our website:
+information on HOP, please see authors website:
 
    http://code.google.com/p/hop/
 
+This version is a modification of HOP. It uses advanced sampling techniques to provide higher accuracy early results of executed job.
 To enable HOP-specific functionality (e.g. pipelining) below described settings should be used.
 
 Enable pipelining between mappers and reducers:
