@@ -29,8 +29,8 @@ public abstract class RandomFileInputFormat<K, V> extends
 	
 	/**
 	 * Splits files given by {@link #listStatus(JobConf)} into RandomFileSplits, which consist of 
-	 * multiple (4 by default) paths */
-	
+	 * multiple (4 by default) paths 
+	 */
 	@Override
 	public synchronized InputSplit[] getSplits(JobConf job, int numSplits)
 	throws IOException{
@@ -38,13 +38,13 @@ public abstract class RandomFileInputFormat<K, V> extends
 		int processIndex = 0;
 		maxsubsplit = job.getInt("io.split.maxsubsplit", 4);
 		List<RandomFileSplit> splits = new ArrayList<RandomFileSplit>
-											(Math.min(numSplits, inputPaths.length));
+						(Math.min(numSplits, inputPaths.length));
 
 		while (processIndex < inputPaths.length){
-			
 			//get the number of splits to be sampled
 			List<FileSplit> splitsToProcess = Arrays.asList(inputPaths).subList(processIndex, 
-					processIndex+ maxsubsplit<inputPaths.length ? (processIndex+maxsubsplit) : inputPaths.length);
+					processIndex+ maxsubsplit<inputPaths.length ? 
+					(processIndex+maxsubsplit) : inputPaths.length);
 		
 			for (int i = 0; i < splitsToProcess.size(); i++){
 				Path[] path = new Path[splitsToProcess.size()];
@@ -72,7 +72,6 @@ public abstract class RandomFileInputFormat<K, V> extends
 								? (file.getLength() - (offsets[tmpIndex-1] - file.getStart())) 
 								: (file.getLength()/numberOfSplits);
 					}
-					
 				}
 				splits.add(new RandomFileSplit(path, offsets, lengths, job));
 			}
@@ -87,12 +86,15 @@ public abstract class RandomFileInputFormat<K, V> extends
 	(InputSplit split,JobConf job, Reporter reporter) throws IOException;
 	
 	
-	// Reads and shuffles the input files sequence in an array
+	/** 
+	 * Returns the input paths for processing
+	 */
 	private void getInputPaths(JobConf job, int numSplits) throws IOException{
 		
 		this.inputPaths = (FileSplit[]) super.getSplits(job, numSplits);
 		boolean inputSort = job.getBoolean("io.split.insort", false);
 		
+		// shuffles input splits if set by job properties
 		if (inputSort){
 		ArrayList<Pair> temporaryStorage = new ArrayList<Pair>();
 		Random rand = new Random(System.currentTimeMillis());
